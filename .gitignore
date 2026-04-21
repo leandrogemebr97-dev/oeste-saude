@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Banco de dados gerado
+api/data/rol.db
+backend/data/rol.db
+
+# Dados do navegador (Playwright/Chrome)
+backend/.chrome_data/
+backend/.playwright/
+
+# Imagens temporárias
+Image-*/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

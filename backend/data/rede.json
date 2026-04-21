@@ -1,0 +1,134 @@
+[
+  {
+    "cidade": "Osvaldo Cruz",
+    "tem_centro_medico": false,
+    "whatsapp": "(18) 99786-1740",
+    "horarios": [
+      "Seg–Qui: 08h às 13h e 14h às 18h",
+      "Sex: 08h às 13h e 15h às 18h"
+    ],
+    "atendentes": [
+      {
+        "nome": "Marcella Oliva Piovesana Costa",
+        "email": "marcella.piovesana@oestesaude.com.br"
+      }
+    ]
+  },
+  {
+    "cidade": "Adamantina",
+    "tem_centro_medico": true,
+    "whatsapp": "(18) 99769-5582",
+    "horarios": [
+      "Seg–Qui: 08h às 13h e 14h às 18h",
+      "Sex: 08h às 13h30 e 15h30 às 18h"
+    ],
+    "atendentes": [
+      {
+        "nome": "Tatiane dos Santos Barboza",
+        "email": "tatiane.barboza@oestsaude.com.br"
+      }
+    ]
+  },
+  {
+    "cidade": "Dracena",
+    "tem_centro_medico": true,
+    "whatsapp": "(18) 99614-7364",
+    "horarios": [
+      "Seg–Qui: 08h às 12h e 13h às 18h",
+      "Sex: 08h às 10h30 e 12h30 às 18h"
+    ],
+    "atendentes": [
+      {
+        "nome": "Ana Ligia Lopes Carvalho Guedes",
+        "email": "ana.guedes@oestesaude.com.br"
+      }
+    ]
+  },
+  {
+    "cidade": "Presidente Venceslau",
+    "tem_centro_medico": false,
+    "whatsapp": "(18) 99672-3084",
+    "horarios": [
+      "Seg–Qui: 08h às 12h e 13h às 18h",
+      "Sex: 08h às 12h e 14h às 18h"
+    ],
+    "atendentes": [
+      {
+        "nome": "Heloisa Santos de Oliveira",
+        "email": "heloisa.oliveira@oestesaude.com.br"
+      }
+    ]
+  },
+  {
+    "cidade": "Presidente Epitácio",
+    "tem_centro_medico": true,
+    "whatsapp": "(18) 99817-0276",
+    "horarios": [
+      "Seg, Ter, Qui e Sex: 08h às 18h",
+      "Qua: 08h às 12h e 13h às 18h"
+    ],
+    "atendentes": [
+      {
+        "nome": "Ana Gabrieli de Lima Luiz",
+        "email": "epitacio@oestesaude.com.br"
+      },
+      {
+        "nome": "Samara Esthefany dos Santos Nogueira",
+        "email": "samara.nogueira@oestesaude.com.br"
+      }
+    ]
+  },
+  {
+    "cidade": "Nova Andradina",
+    "tem_centro_medico": true,
+    "whatsapp": "(67) 99915-8929",
+    "horarios": [
+      "Seg–Qui: 08h às 19h",
+      "Sex: 08h às 18h"
+    ],
+    "atendentes": [
+      {
+        "nome": "Halana Karoliny Gonçalves da Silva",
+        "email": "halana.silva@oestesaude.com.br"
+      },
+      {
+        "nome": "Adrieli Carolini de Castro",
+        "email": "adrieli.carolini@oestesaude.com.br"
+      }
+    ]
+  },
+  {
+    "cidade": "Bataguassu",
+    "tem_centro_medico": false,
+    "whatsapp": "(18) 99601-8920",
+    "horarios": [
+      "Seg–Qui: 08h às 12h e 13h às 18h",
+      "Sex: 08h às 12h e 14h às 18h"
+    ],
+    "atendentes": [
+      {
+        "nome": "Tamires Rodrigues",
+        "email": "bataguassu@oestesaude.com.br"
+      },
+      {
+        "nome": "Vanessa da Silva Santos",
+        "email": "vanessa.santos@oestesaude.com.br"
+      }
+    ]
+  },
+  {
+    "cidade": "Campo Grande",
+    "tem_centro_medico": true,
+    "whatsapp": "(67) 99669-3728",
+    "horarios": [
+      "Seg–Qui: 08h às 11h e 12h às 18h",
+      "Sex: 08h às 11h e 13h às 18h"
+    ],
+    "atendentes": [
+      {
+        "nome": "Alanna Mayara Pereira",
+        "email": "alanna.mayara@oestesaude.com.br"
+      }
+    ]
+  }
+]

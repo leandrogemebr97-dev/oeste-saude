@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rol ANS — Oeste Saúde</title>
+  <link rel="stylesheet" href="/assets/css/global.css?v=3" />
+  <link rel="stylesheet" href="/assets/css/rol.css?v=3" />
+</head>
+<body>
+  <script src="/assets/js/nav.js?v=3"></script>
+
+  <main class="page-main" id="view-search">
+    <div class="wrap">
+      <div class="rol-header">
+        <h2>Rol de Procedimentos ANS</h2>
+        <p>Consulte se um procedimento é de cobertura obrigatória pelo plano.</p>
+      </div>
+      <div class="search-bar">
+        <input id="search-input" type="search" placeholder="Nome do procedimento ou código TUSS…" autocomplete="off" spellcheck="false" />
+        <button id="search-btn">Buscar</button>
+      </div>
+      <div id="status-bar" class="status-bar hidden"></div>
+      <div id="results-list" class="results-list hidden"></div>
+    </div>
+  </main>
+
+  <main class="page-main hidden" id="view-detail">
+    <div id="detail-container"></div>
+  </main>
+
+  <script src="/assets/js/pages/rol.js?v=4"></script>
+</body>
+</html>
