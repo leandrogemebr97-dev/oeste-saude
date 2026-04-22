@@ -413,6 +413,28 @@ ${historyText}
     chatSend.disabled = true;
     appendLoading();
 
+    // Detectar se usuário perguntou sobre carência e enviar contexto
+    const carenciaKeywords = ['carência', 'carencia', 'carências', 'carencias', 'parto', 'cobertura', 'coberto', 'coberta'];
+    const isCarenciaQuestion = carenciaKeywords.some(keyword => text.toLowerCase().includes(keyword));
+    
+    if (isCarenciaQuestion) {
+      try {
+        // Carregar contexto de carência
+        const carenciaResponse = await fetch('/carencia-contexto');
+        if (carenciaResponse.ok) {
+          const carenciaContext = await carenciaResponse.text();
+          // Enviar contexto antes da pergunta
+          await fetch(API_URL + '/chat/context', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: carenciaContext }),
+          });
+        }
+      } catch (e) {
+        console.error('Erro ao carregar contexto de carência:', e);
+      }
+    }
+
     try {
       const res = await fetch(API_URL + '/chat', {
         method: 'POST',

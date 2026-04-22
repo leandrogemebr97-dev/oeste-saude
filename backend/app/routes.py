@@ -15,6 +15,7 @@ SERVER_INSTANCE_ID = str(int(time.time()))
 
 DB   = Path(__file__).parent.parent / "data" / "rol.db"
 REDE = Path(__file__).parent.parent / "data" / "rede.json"
+CARENCIA_CONTEXTO = Path(__file__).parent.parent / "data" / "carencia_contexto.txt"
 
 router = APIRouter()
 
@@ -313,3 +314,17 @@ INSTRUÇÃO IMPORTANTE: NÃO RESPONDA A ESTA MENSAGEM. Apenas guarde este contex
         return {"success": True, "message": "Contexto enviado com sucesso"}
     except Exception as e:
         raise HTTPException(status_code=502, detail=f"Erro na automação do navegador: {str(e)}")
+
+@router.get("/carencia-contexto", summary="Retorna contexto sobre carências para o chat")
+def get_carencia_contexto():
+    """Retorna o conteúdo do arquivo de contexto sobre carências."""
+    try:
+        if not CARENCIA_CONTEXTO.exists():
+            raise HTTPException(status_code=404, detail="Arquivo de contexto não encontrado")
+        
+        with open(CARENCIA_CONTEXTO, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        return content
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao carregar contexto: {str(e)}")

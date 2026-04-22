@@ -1,0 +1,86 @@
+# CONTEXTO SOBRE CARÊNCIAS - OESTE SAÚDE
+
+## O que é Carência
+Carência é o período durante o qual o beneficiário não pode utilizar determinados procedimentos do plano de saúde, mesmo que já esteja pagando as mensalidades. Esse período é estabelecido pelo contrato e pelas normas da ANS (Agência Nacional de Saúde Suplementar).
+
+## Carências por Procedimento
+- Consultas: 24 horas após ativação do plano
+- Exames Laboratoriais: 24 horas (simples e complexos)
+- Exames de Imagem: 24 horas (Raios-X, Ultrassom, etc.)
+- Terapias: 24 horas (Fisioterapia, fonoaudiologia, etc.)
+- Internações: 24 horas (clínica e cirúrgica)
+- Cirurgias: 24 horas (exceto transplantes)
+- Parto: 300 dias (para gestantes)
+- Transplantes: 24 meses (conforme rol da ANS)
+- Próteses e Órteses: 24 horas (quando autorizadas)
+
+## Carências por Urgência e Emergência
+- Urgência e Emergência: 24 horas (para todos os planos)
+- Acidente Pessoal: Sem carência (com documentação)
+- Doenças Preexistentes: 24 meses (após declaração)
+
+## Parto a Termo - Detalhes Importantes
+
+### Carência
+- 300 dias (aproximadamente 10 meses) a partir da data de início do contrato
+- Aplica-se a partos normais e cesarianas
+- Pré-natal: 24 horas após ativação
+
+### O que é Coberto
+- Parto normal (vaginal) a termo (37 semanas ou mais)
+- Cesariana a termo
+- Pré-natal (consultas e exames)
+- Internação hospitalar para parto
+- Procedimentos relacionados ao parto
+- UTI neonatal para o recém-nascido
+
+### O que NÃO é Coberto
+- Parto prematuro (antes de 37 semanas) - pode ter carência diferenciada
+- Procedimentos estéticos não relacionados ao parto
+- Quarto particular (apenas quarto coletivo ou enfermaria, conforme plano)
+- Acompanhante (depende do tipo de plano)
+- Métodos contraceptivos pós-parto
+
+### Regulamentação ANS
+- A cobertura de parto a termo é obrigatória para todos os planos de saúde
+- Conforme RN 428/2017 da ANS
+- Planos individuais/familiares novos não podem ter carência para urgência e emergência
+- Mantêm a carência de 300 dias para parto a termo
+
+## Doenças e Lesões Preexistentes
+- Período máximo: 24 meses
+- Exigência de declaração de saúde
+- Pode haver agravo se não informado
+- O beneficiário deve declarar essas condições no momento da adesão ao plano
+
+## Transplantes
+- Carência: 24 meses
+- Conforme rol da ANS
+- Inclui pré e pós-transplante
+
+## Urgência e Emergência
+- Carência: 24 horas
+- Atendimento 24h
+- Rede credenciada
+
+## Observações Importantes
+- As carências podem variar conforme o tipo de contratação (individual/familiar, empresarial)
+- Podem variar conforme o plano (referência, executivo)
+- Podem variar conforme a legislação aplicada
+- Consulte sempre seu contrato para informações específicas
+
+## Perguntas Frequentes
+- O que acontece se eu precisar de um procedimento durante a carência?
+  Se o procedimento estiver em carência, você precisará pagar pelo atendimento particularmente. Porém, urgência e emergência têm carência de apenas 24 horas.
+
+- As carências mudam se eu mudar de plano?
+  Sim, ao mudar de plano pode haver novas carências, dependendo do tipo de mudança (portabilidade de carências ou novo contrato).
+
+- Grávidas têm carência para parto?
+  Para cobertura de parto a termo, a carência é de 300 dias. O pré-natal pode ser iniciado após 24 horas de contrato.
+
+- Acidentes pessoais têm carência?
+  Não, acidentes pessoais não têm carência, desde que devidamente documentados e comprovados.
+
+- Como saber qual carência se aplica ao meu caso?
+  Consulte seu contrato de plano de saúde ou entre em contato com a central de atendimento da Oeste Saúde para informações específicas do seu plano.

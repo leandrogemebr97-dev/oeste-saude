@@ -154,6 +154,23 @@
   font-size: 1.2rem;
 }
 
+.detail-item h4 {
+  color: #1a5490;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.detail-item .note {
+  margin-top: 15px;
+  padding: 12px;
+  background: #fff3cd;
+  border-left: 3px solid #ffc107;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #856404;
+}
+
 .carencia-faq {
   background: #f8f9fa;
   padding: 30px;
