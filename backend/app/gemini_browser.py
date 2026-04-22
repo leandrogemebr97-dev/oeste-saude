@@ -6,9 +6,13 @@ Navega até https://gemini.google.com/, envia mensagens e captura as respostas r
 """
 
 import time
+import threading
 from pathlib import Path
 from typing import Optional
 from playwright.sync_api import sync_playwright
+
+# Lock global para garantir thread-safety no acesso ao navegador
+_browser_lock = threading.Lock()
 
 GEMINI_URL = "https://gemini.google.com/"
 CDP_URL = "http://127.0.0.1:9222"
@@ -74,27 +78,29 @@ class GeminiBrowser:
 
     def start(self) -> None:
         """Inicia Chromium embutido do Playwright."""
-        print("[GeminiBrowser] Iniciando Chromium embutido do Playwright...")
-        self._pw = sync_playwright().start()
+        # Usar lock global para garantir thread-safety
+        with _browser_lock:
+            print("[GeminiBrowser] Iniciando Chromium embutido do Playwright...")
+            self._pw = sync_playwright().start()
 
-        try:
-            # Iniciar Chromium embutido do Playwright (não Chrome do sistema)
-            self._browser = self._pw.chromium.launch(
-                headless=False,
-                args=[
-                    "--no-first-run",
-                    "--no-default-browser-check",
-                ],
-            )
-            # Criar contexto com user data dir
-            context = self._browser.new_context()
-            self._page = context.new_page()
-            self._page.goto(GEMINI_URL, wait_until="domcontentloaded")
-            self._connected = True
-            print("[GeminiBrowser] Chromium embutido iniciado com sucesso.")
-        except Exception as e:
-            print(f"[GeminiBrowser] Erro ao iniciar Chromium: {e}")
-            raise
+            try:
+                # Iniciar Chromium embutido do Playwright (não Chrome do sistema)
+                self._browser = self._pw.chromium.launch(
+                    headless=False,
+                    args=[
+                        "--no-first-run",
+                        "--no-default-browser-check",
+                    ],
+                )
+                # Criar contexto com user data dir
+                context = self._browser.new_context()
+                self._page = context.new_page()
+                self._page.goto(GEMINI_URL, wait_until="domcontentloaded")
+                self._connected = True
+                print("[GeminiBrowser] Chromium embutido iniciado com sucesso.")
+            except Exception as e:
+                print(f"[GeminiBrowser] Erro ao iniciar Chromium: {e}")
+                raise
 
     def _find_or_create_gemini_tab(self, ctx):
         """Reutiliza aba do Gemini se já existir; senão cria uma nova."""
@@ -132,45 +138,47 @@ class GeminiBrowser:
 
     def send(self, text: str, timeout: float = 60.0) -> str:
         """Envia *text* no Gemini web e retorna a última resposta do bot."""
-        self.ensure_ready()
-        p = self._page
+        # Usar lock global para garantir thread-safety
+        with _browser_lock:
+            self.ensure_ready()
+            p = self._page
 
-        # 1) Conta mensagens do bot antes
-        before = p.evaluate(_COUNT_BOT_MSGS_JS)
-        print(f"[GeminiBrowser] Mensagens bot antes: {before}")
+            # 1) Conta mensagens do bot antes
+            before = p.evaluate(_COUNT_BOT_MSGS_JS)
+            print(f"[GeminiBrowser] Mensagens bot antes: {before}")
 
-        # 2) Localiza o campo de input e envia
-        self._type_and_submit(text)
+            # 2) Localiza o campo de input e envia
+            self._type_and_submit(text)
 
-        # 3) Espera nova mensagem do bot aparecer
-        deadline = time.time() + timeout
-        while time.time() < deadline:
-            time.sleep(1.5)
-            after = p.evaluate(_COUNT_BOT_MSGS_JS)
-            print(f"[GeminiBrowser] Mensagens bot agora: {after}")
-            if after > before:
-                # Espera mais tempo para o streaming terminar
-                time.sleep(3.0)
-                
-                # Verifica se a resposta está estável (não mudando mais)
-                last_text = None
-                stable_count = 0
-                for _ in range(5):
-                    current_text = self._extract_last_bot_text()
-                    if current_text == last_text:
-                        stable_count += 1
-                    else:
-                        stable_count = 0
-                        last_text = current_text
-                    if stable_count >= 2:
-                        break
-                    time.sleep(1.0)
-                
-                return self._extract_last_bot_text()
+            # 3) Espera nova mensagem do bot aparecer
+            deadline = time.time() + timeout
+            while time.time() < deadline:
+                time.sleep(1.5)
+                after = p.evaluate(_COUNT_BOT_MSGS_JS)
+                print(f"[GeminiBrowser] Mensagens bot agora: {after}")
+                if after > before:
+                    # Espera mais tempo para o streaming terminar
+                    time.sleep(3.0)
+                    
+                    # Verifica se a resposta está estável (não mudando mais)
+                    last_text = None
+                    stable_count = 0
+                    for _ in range(5):
+                        current_text = self._extract_last_bot_text()
+                        if current_text == last_text:
+                            stable_count += 1
+                        else:
+                            stable_count = 0
+                            last_text = current_text
+                        if stable_count >= 2:
+                            break
+                        time.sleep(1.0)
+                    
+                    return self._extract_last_bot_text()
 
-        # 4) Fallback
-        result = self._extract_last_bot_text()
-        return result or "(Sem resposta — timeout)"
+            # 4) Fallback
+            result = self._extract_last_bot_text()
+            return result or "(Sem resposta — timeout)"
 
     def _type_and_submit(self, text: str) -> None:
         p = self._page

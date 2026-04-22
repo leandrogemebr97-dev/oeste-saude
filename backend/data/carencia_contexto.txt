@@ -1,13 +1,79 @@
-# CONTEXTO SOBRE CARÊNCIAS - OESTE SAÚDE
+# CONTEXTO SOBRE PRAZOS DE CARÊNCIAS - OESTE SAÚDE
 
-## O que é Carência
-Carência é o período durante o qual o beneficiário não pode utilizar determinados procedimentos do plano de saúde, mesmo que já esteja pagando as mensalidades. Esse período é estabelecido pelo contrato e pelas normas da ANS (Agência Nacional de Saúde Suplementar).
+## Tabela de Prazos de Carências
 
-## Carências por Procedimento
-- Consultas: 24 horas após ativação do plano
-- Exames Laboratoriais: 24 horas (simples e complexos)
-- Exames de Imagem: 24 horas (Raios-X, Ultrassom, etc.)
-- Terapias: 24 horas (Fisioterapia, fonoaudiologia, etc.)
+### 24 HORAS
+- Urgência e Emergência
+- Acidente pessoal (desde que comprovado através de declaração do médico assistente ou boletim de ocorrência)
+
+### 30 DIAS
+- Consultas médicas
+- Hemogramas
+- Exames de urina e fezes
+
+### 90 DIAS
+- Exames auxiliares de diagnóstico (Raio-X, Ultrassom, Eletrocardiograma, Eletroencefalograma)
+- Observação: Despesas realizadas em laboratório particular (exceto Raio-X, Eletrocardiograma, Ultrassom e Eletroencefalograma) estão sujeitas às cláusulas de reembolso
+
+### 180 DIAS
+- Exames e procedimentos de alta complexidade
+- Internações em Unidade de Terapia Intensiva (exceto em virtude de acidente pessoal)
+- Parto prematuro (antes de completar 37 semanas)
+- Procedimentos de alta complexidade em regime ambulatorial:
+  * Endoscopia digestiva alta
+  * Videolaparoscopia
+  * Angiografia
+  * Colonoscopia
+  * Colangiografia
+  * Esfincterotomia
+  * Endoscopia respiratória
+  * Amniocentese
+  * Biopsia
+  * Colposcopia
+  * Cauterização
+  * Implante de valvula
+  * Implante de marca-passo
+  * Cateterismo
+  * Artroscopia
+  * Quimioterapia e radioterapia
+  * Diatermia
+  * Tratamento de varizes
+  * Hemodiálise
+  * Aferese
+  * Exames de medicina nuclear
+
+### 300 DIAS
+- Partos e suas intervenções
+- A partir da data de pagamento da 1ª mensalidade
+
+### 24 MESES (2 ANOS)
+- Doenças e lesões preexistentes (DLE)
+- Cobertura Parcial Temporária (CPT)
+- Observação: A OESTE SAÚDE aplicará a carência de 24 meses nos casos de doenças ou lesões preexistentes não declaradas pelo beneficiário, com suspensão da cobertura de 30 (trinta) a 180 (cento e oitenta) dias, e poderá aplicar o agravo de 01 mensalidade, com início a partir da data de pagamento da 1ª mensalidade.
+
+## Informações Importantes
+
+### ACIDENTE PESSOAL
+- Sem carência quando comprovado através de declaração do médico assistente ou boletim de ocorrência
+
+### DOENÇAS PREEXISTENTES
+- Carência de 24 meses (Cobertura Parcial Temporária)
+- Pode haver suspensão de 30 a 180 dias
+- Pode haver agravo de 1 mensalidade se não declaradas
+
+### PARTO
+- 300 dias de carência (aproximadamente 10 meses)
+- Contados a partir da data de pagamento da 1ª mensalidade
+
+### PARTO PREMATURO
+- Antes de 37 semanas = 180 dias de carência (procedimento de alta complexidade)
+
+### UNIDADE DE TERAPIA INTENSIVA (UTI)
+- 180 dias de carência
+- Exceto em virtude de acidente pessoal comprovado
+
+### LABORATÓRIO PARTICULAR
+- Exames (exceto Raio-X, Eletrocardiograma, Ultrassom, Eletroencefalograma) estão sujeitos às cláusulas de reembolso
 - Internações: 24 horas (clínica e cirúrgica)
 - Cirurgias: 24 horas (exceto transplantes)
 - Parto: 300 dias (para gestantes)
