@@ -4,12 +4,13 @@
  */
 (function () {
   const NAV_ITEMS = [
-    { label: 'Dashboard', href: '/pages/index.html',   key: 'home'    },
-    { label: 'Rol ANS',   href: '/pages/rol.html',     key: 'rol'     },
-    { label: 'Planos',    href: '/pages/planos.html',  key: 'planos'  },
-    { label: 'Rede',      href: '/pages/rede.html',    key: 'rede'    },
-    { label: 'CME',       href: '/pages/cme.html',     key: 'cme'     },
-    { label: 'Contato',   href: '/pages/contato.html', key: 'contato' },
+    { label: 'Dashboard', href: '/pages/index.html',   key: 'home'     },
+    { label: 'Rol ANS',   href: '/pages/rol.html',     key: 'rol'      },
+    { label: 'Planos',    href: '/pages/planos.html',  key: 'planos'   },
+    { label: 'Carência',  href: '/pages/carencia.html', key: 'carencia' },
+    { label: 'Rede',      href: '/pages/rede.html',    key: 'rede'     },
+    { label: 'CME',       href: '/pages/cme.html',     key: 'cme'      },
+    { label: 'Contato',   href: '/pages/contato.html', key: 'contato'  },
   ];
 
   const current = location.pathname.split('/').pop() || 'index.html';
