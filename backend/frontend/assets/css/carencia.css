@@ -1,251 +1,158 @@
-/* Carência Page Styles */
+/* Carência - Estilo Simples e Limpo */
 
-.carencia-container {
-  max-width: 1200px;
+.carencia-simples {
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 30px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.carencia-header {
+/* Cabeçalho */
+.cabecalho {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #1a5490;
 }
 
-.carencia-header h1 {
-  font-size: 2.5rem;
+.cabecalho h1 {
   color: #1a5490;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin: 0 0 10px 0;
 }
 
-.carencia-header .subtitle {
-  font-size: 1.2rem;
+.cabecalho p {
   color: #666;
+  font-size: 1.1rem;
+  margin: 0;
 }
 
-.carencia-intro {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-bottom: 50px;
-}
-
-.info-card {
-  background: #f8f9fa;
-  padding: 25px;
-  border-radius: 8px;
-  border-left: 4px solid #1a5490;
-}
-
-.info-card h2 {
-  color: #1a5490;
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-}
-
-.info-card p {
-  color: #555;
-  line-height: 1.6;
-}
-
-.info-card.important {
-  background: #fff3cd;
-  border-left-color: #ffc107;
-}
-
-.info-card.important h2 {
-  color: #856404;
-}
-
-.carencia-tables {
-  margin-bottom: 50px;
-}
-
-.table-section {
-  margin-bottom: 40px;
-}
-
-.table-section h2 {
-  color: #1a5490;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-}
-
-.carencia-table {
+/* Tabela Principal */
+.tabela-principal {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  margin-bottom: 40px;
+  font-size: 0.95rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  overflow: hidden;
 }
 
-.carencia-table thead {
+.tabela-principal thead {
   background: #1a5490;
   color: white;
 }
 
-.carencia-table th {
+.tabela-principal th {
   padding: 15px;
   text-align: left;
   font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
-.carencia-table td {
-  padding: 12px 15px;
+.tabela-principal td {
+  padding: 15px;
   border-bottom: 1px solid #e0e0e0;
+  vertical-align: top;
 }
 
-.carencia-table tbody tr:hover {
-  background: #f5f5f5;
-}
-
-.carencia-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.carencia-details {
-  margin-bottom: 50px;
-}
-
-.detail-section h2 {
-  color: #1a5490;
-  margin-bottom: 30px;
-  font-size: 1.5rem;
-}
-
-.detail-item {
-  background: white;
-  padding: 25px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.detail-item h3 {
-  color: #1a5490;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.detail-item p {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.detail-item ul {
-  list-style: none;
-  padding: 0;
-}
-
-.detail-item ul li {
-  padding: 8px 0;
-  padding-left: 25px;
-  position: relative;
-  color: #666;
-}
-
-.detail-item ul li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #1a5490;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.detail-item h4 {
-  color: #1a5490;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-.detail-item .note {
-  margin-top: 15px;
-  padding: 12px;
-  background: #fff3cd;
-  border-left: 3px solid #ffc107;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  color: #856404;
-}
-
-.carencia-faq {
+.tabela-principal tbody tr:hover {
   background: #f8f9fa;
-  padding: 30px;
-  border-radius: 8px;
-  margin-bottom: 50px;
 }
 
-.carencia-faq h2 {
-  color: #1a5490;
-  margin-bottom: 25px;
-  font-size: 1.5rem;
-}
-
-.faq-item {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.faq-item:last-child {
+.tabela-principal tbody tr:last-child td {
   border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 
-.faq-item h3 {
-  color: #1a5490;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* Coluna Prazo */
+.tabela-principal .prazo {
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  width: 120px;
 }
 
-.faq-item h3::after {
-  content: "+";
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-
-.faq-item.active h3::after {
-  content: "−";
-}
-
-.faq-item p {
-  color: #555;
+/* Coluna Cobertura */
+.tabela-principal .cobertura {
   line-height: 1.6;
-  display: none;
-  padding-left: 20px;
 }
 
-.faq-item.active p {
-  display: block;
+/* Coluna Observações */
+.tabela-principal .obs {
+  font-size: 0.9rem;
+  color: #555;
+  max-width: 300px;
 }
 
+.tabela-principal .obs.alerta {
+  color: #856404;
+  background: #fff3cd;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.tabela-principal .obs.alerta-importante {
+  color: #721c24;
+  background: #f8d7da;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* Cores por prazo */
+.prazo-24h .prazo { color: #28a745; }
+.prazo-30d .prazo { color: #6c757d; }
+.prazo-90d .prazo { color: #17a2b8; }
+.prazo-180d .prazo { color: #fd7e14; }
+.prazo-300d .prazo { color: #e83e8c; }
+.prazo-24m .prazo { color: #dc3545; }
+
+/* Avisos */
+.avisos {
+  margin-bottom: 40px;
+}
+
+.avisos h2 {
+  color: #1a5490;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.aviso-box {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-left: 4px solid #6c757d;
+  border-radius: 0 4px 4px 0;
+}
+
+.aviso-box.destaque {
+  border-left-color: #28a745;
+  background: #d4edda;
+}
+
+.aviso-box strong {
+  color: #333;
+}
+
+/* Contato */
 .carencia-contact {
   text-align: center;
   padding: 40px;
-  background: linear-gradient(135deg, #1a5490 0%, #2d7ab8 100%);
+  background: #1a5490;
   border-radius: 8px;
   color: white;
 }
 
 .carencia-contact h2 {
-  margin-bottom: 15px;
+  margin: 0 0 10px 0;
   font-size: 1.5rem;
 }
 
 .carencia-contact p {
-  margin-bottom: 25px;
-  font-size: 1.1rem;
+  margin: 0 0 20px 0;
 }
 
-.contact-info .btn {
+.btn {
   display: inline-block;
   padding: 12px 30px;
   background: white;
@@ -253,31 +160,37 @@
   text-decoration: none;
   border-radius: 5px;
   font-weight: 600;
-  transition: all 0.3s;
 }
 
-.contact-info .btn:hover {
+.btn:hover {
   background: #f0f0f0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Responsive */
+/* Responsivo */
 @media (max-width: 768px) {
-  .carencia-header h1 {
-    font-size: 2rem;
+  .carencia-simples {
+    padding: 15px;
   }
 
-  .carencia-table {
-    font-size: 0.9rem;
+  .cabecalho h1 {
+    font-size: 1.5rem;
   }
 
-  .carencia-table th,
-  .carencia-table td {
+  .tabela-principal {
+    font-size: 0.85rem;
+  }
+
+  .tabela-principal th,
+  .tabela-principal td {
     padding: 10px;
   }
 
-  .carencia-intro {
-    grid-template-columns: 1fr;
+  .tabela-principal .prazo {
+    width: auto;
+    font-size: 0.9rem;
+  }
+
+  .tabela-principal .obs.alerta-importante {
+    font-size: 0.8rem;
   }
 }

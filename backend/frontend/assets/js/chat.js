@@ -82,6 +82,12 @@
   }
 
   function showStartButton() {
+    // Remover qualquer mensagem de início existente
+    const existing = document.getElementById('initMessage');
+    if (existing) {
+      existing.remove();
+    }
+    
     const initMsg = document.createElement('div');
     initMsg.id = 'initMessage';
     initMsg.className = 'chat-message chat-message--bot';
