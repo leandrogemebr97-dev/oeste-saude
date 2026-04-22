@@ -183,24 +183,12 @@
   }
 
   function handleBrowserClosed() {
-    // Só processar se ainda estiver marcado como pronto
-    if (!isReady) return;
-    
-    const warningShown = localStorage.getItem(WARNING_SHOWN_KEY) === 'true';
-    if (warningShown) {
-      // Já mostrou aviso, apenas garantir que botão existe
-      setReady(false);
-      const existingBtn = document.getElementById('initMessage');
-      if (!existingBtn) {
-        showStartButton();
-      }
-      return;
-    }
-    
-    // Marcar como não pronto e mostrar aviso
+    // Sempre marcar como não pronto
     setReady(false);
-    localStorage.setItem(WARNING_SHOWN_KEY, 'true');
     localStorage.removeItem(STORAGE_STATE);
+    
+    // Sempre mostrar o botão iniciar (remove e recria se necessário)
+    showStartButton();
     
     // Adicionar mensagem de aviso
     const existingWarning = document.querySelector('.browser-closed-warning');
@@ -209,12 +197,11 @@
       msg.className = 'chat-message chat-message--bot browser-closed-warning';
       const bubble = document.createElement('div');
       bubble.className = 'chat-bubble chat-bubble--info';
-      bubble.innerHTML = '<strong>Navegador foi fechado.</strong><br>Clique em Iniciar para continuar a conversa.';
+      bubble.innerHTML = '<strong>Navegador foi fechado.</strong><br>Clique em "Iniciar Assistente" para continuar.';
       msg.appendChild(bubble);
       chatBox.appendChild(msg);
       chatBox.scrollTop = chatBox.scrollHeight;
     }
-    showStartButton();
   }
   
   async function checkBrowserStatus() {
@@ -245,7 +232,6 @@
       
       const storedState = localStorage.getItem(STORAGE_STATE);
       const wasReady = storedState ? JSON.parse(storedState).ready : false;
-      const warningShown = localStorage.getItem(WARNING_SHOWN_KEY) === 'true';
       
       if (data.ready) {
         setReady(true);
@@ -261,30 +247,9 @@
         // Habilitar botão de contexto
         const contextBtn = document.getElementById('contextBtn');
         if (contextBtn) contextBtn.disabled = false;
-      } else if ((wasReady || isReady) && !data.ready && !warningShown) {
+      } else if (wasReady || isReady) {
         // Navegador foi fechado - detecta tanto pelo localStorage quanto pelo estado local
-        localStorage.setItem(WARNING_SHOWN_KEY, 'true');
-        // Limpar estado para forçar novo início
-        localStorage.removeItem(STORAGE_STATE);
-        setReady(false);
-        
-        // Desabilitar botão de contexto
-        const contextBtn = document.getElementById('contextBtn');
-        if (contextBtn) contextBtn.disabled = true;
-        
-        // Adicionar mensagem apenas se não existir já
-        const existingWarning = document.querySelector('.browser-closed-warning');
-        if (!existingWarning) {
-          const msg = document.createElement('div');
-          msg.className = 'chat-message chat-message--bot browser-closed-warning';
-          const bubble = document.createElement('div');
-          bubble.className = 'chat-bubble chat-bubble--info';
-          bubble.innerHTML = '<strong>Navegador foi fechado.</strong><br>Clique em Iniciar para continuar a conversa.';
-          msg.appendChild(bubble);
-          chatBox.appendChild(msg);
-          chatBox.scrollTop = chatBox.scrollHeight;
-        }
-        showStartButton();
+        handleBrowserClosed();
       }
     } catch (e) {
       console.error('Erro ao verificar status:', e);
