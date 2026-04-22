@@ -4,7 +4,6 @@
  */
 (function () {
   const NAV_ITEMS = [
-    { label: 'Dashboard', href: '/pages/index.html',   key: 'home'     },
     { label: 'Rol ANS',   href: '/pages/rol.html',     key: 'rol'      },
     { label: 'Planos',    href: '/pages/planos.html',  key: 'planos'   },
     { label: 'Carência',  href: '/pages/carencia.html', key: 'carencia' },
@@ -27,11 +26,6 @@
   document.body.insertAdjacentHTML('afterbegin', `
     <header class="navbar">
       <div class="navbar-inner">
-        <a href="/" class="brand">
-          <img src="https://th.bing.com/th/id/ODF.aE0r0MnfIatFjr5PFky3Wg?w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"
-               alt="Oeste Saúde" class="brand-img" />
-          <span class="brand-name">Oeste Saúde</span>
-        </a>
         <nav class="shelf" aria-label="Menu principal">${books}</nav>
       </div>
     </header>`);

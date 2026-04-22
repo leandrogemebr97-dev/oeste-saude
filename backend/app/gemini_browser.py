@@ -67,8 +67,13 @@ class _BrowserWorker(threading.Thread):
         try:
             self._pw = sync_playwright().start()
             self._browser = self._pw.chromium.launch(
-                headless=False,
-                args=["--no-first-run", "--no-default-browser-check"],
+                headless=True,
+                args=[
+                    "--no-first-run",
+                    "--no-default-browser-check",
+                    "--no-sandbox",
+                    "--disable-dev-shm-usage",
+                ],
             )
             ctx = self._browser.new_context()
             self._page = ctx.new_page()
