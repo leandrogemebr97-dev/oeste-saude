@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["python312", "chromium"]
+nixPkgs = ["python312", "python312Packages.pip", "chromium"]
 nixLibs = ["zlib", "nss", "nspr", "atk", "atkmm", "cairo", "gtk3", "gdk-pixbuf", "pango", "libepoxy", "alsa-lib", "dbus", "cups", "xorg.libX11", "xorg.libXcomposite", "xorg.libXcursor", "xorg.libXdamage", "xorg.libXext", "xorg.libXfixes", "xorg.libXi", "xorg.libXrandr", "xorg.libXrender", "xorg.libXtst", "xorg.libxcb", "libdrm", "mesa", "libGL"]
 
 [phases.build]
