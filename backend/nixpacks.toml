@@ -1,13 +1,5 @@
 [phases.setup]
-nixPkgs = ["python312", "python312Packages.pip", "chromium"]
-nixLibs = ["zlib", "nss", "nspr", "atk", "atkmm", "cairo", "gtk3", "gdk-pixbuf", "pango", "libepoxy", "alsa-lib", "dbus", " cups", "xorg.libX11", "xorg.libXcomposite", "xorg.libXcursor", "xorg.libXdamage", "xorg.libXext", "xorg.libXfixes", "xorg.libXi", "xorg.libXrandr", "xorg.libXrender", "xorg.libXtst", "xorg.libxcb", "libdrm", "mesa", "libGL"]
-
-[phases.build]
-cmds = ["python -m pip install -r requirements.txt", "python -m playwright install chromium"]
+nixPkgs = ["python312", "python312Packages.pip"]
 
 [start]
-cmd = "gunicorn main:app -b 0.0.0.0:$PORT --workers 4"
-
-[variables]
-PORT = "8001"
-PYTHONUNBUFFERED = "1"
+cmd = "gunicorn main:app -w 2 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT"
