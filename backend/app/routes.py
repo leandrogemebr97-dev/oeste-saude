@@ -237,18 +237,12 @@ class ChatMessage(BaseModel):
 @router.get("/chat/status", summary="Verificar se o navegador do Gemini está pronto")
 def chat_status():
     try:
-        from app.gemini_browser import _browser_instance
-        print(f"[/chat/status] _browser_instance: {_browser_instance}")
-        if _browser_instance:
-            print(f"[/chat/status] _connected: {_browser_instance._connected}")
-    except ImportError as exc:
-        print(f"[/chat/status] Playwright não instalado: {exc}")
+        from app.gemini_browser import _worker
+        ready = _worker is not None and _worker.connected and _worker.is_alive()
+        return {"ready": ready, "server_id": SERVER_INSTANCE_ID,
+                "message": "Assistente pronto" if ready else "Navegador não iniciado"}
+    except ImportError:
         return {"ready": False, "server_id": SERVER_INSTANCE_ID, "message": "Playwright não instalado"}
-    
-    if _browser_instance is None or not _browser_instance._connected:
-        return {"ready": False, "server_id": SERVER_INSTANCE_ID, "message": "Navegador não iniciado"}
-    
-    return {"ready": True, "server_id": SERVER_INSTANCE_ID, "message": "Assistente pronto"}
 
 @router.post("/chat/start", summary="Iniciar navegador do Gemini")
 def start_browser():
